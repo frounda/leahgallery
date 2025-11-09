@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chromatic Echoes — Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="room room-gallery">
+  <header class="site-header">
+    <div class="site-brand">
+      <h1>Chromatic Echoes</h1>
+      <p class="tagline">Gallery — Room 2</p>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About / Artist Statement</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="gallery-intro">
+      <h2>Room 2 — Main Exhibits</h2>
+      <p>Here are three curated studies. Each is shown with a short reflection, like an artist note beside the framed work.</p>
+    </section>
+
+    <section class="gallery-grid" aria-live="polite">
+      <!-- Artwork 1 -->
+      <article class="frame">
+        <figure class="artwork" aria-labelledby="a1Title">
+          <figcaption id="a1Title"><h3>Chromatic Drift</h3></figcaption>
+          <!-- SVG art -->
+          <svg viewBox="0 0 600 400" class="art-svg tight" role="img" aria-label="Chromatic Drift">
+            <defs>
+              <linearGradient id="lg1" x1="0" x2="1">
+                <stop offset="0" stop-color="#ff8a80" />
+                <stop offset="0.5" stop-color="#ffd180" />
+                <stop offset="1" stop-color="#b388ff" />
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#lg1)"></rect>
+            <g class="moving-shapes">
+              <circle cx="120" cy="100" r="70" class="s1"/>
+              <circle cx="460" cy="300" r="90" class="s2"/>
+              <rect x="260" y="120" width="120" height="150" rx="20" ry="20" class="s3" />
+            </g>
+          </svg>
+        </figure>
+        <div class="art-note">
+          <h4>Artist note</h4>
+          <p><strong>Chromatic Drift</strong> studies the quiet motion of color fields. The circular forms are memories drifting in a soft gradient sea.</p>
+        </div>
+      </article>
+
+      <!-- Artwork 2 -->
+      <article class="frame">
+        <figure class="artwork" aria-labelledby="a2Title">
+          <figcaption id="a2Title"><h3>Echoes in Glass</h3></figcaption>
+          <svg viewBox="0 0 600 400" class="art-svg tall" role="img" aria-label="Echoes in Glass">
+            <defs>
+              <radialGradient id="rg2" cx="0.5" cy="0.4">
+                <stop offset="0" stop-color="#b2f0ff" />
+                <stop offset="1" stop-color="#8ea0ff" />
+              </radialGradient>
+              <filter id="ripple">
+                <feTurbulence baseFrequency="0.007" numOctaves="2" seed="2" />
+                <feDisplacementMap in="SourceGraphic" scale="10" />
+              </filter>
+            </defs>
+            <rect width="100%" height="100%" fill="#07122a" />
+            <g class="glass" filter="url(#ripple)">
+              <path d="M80 120 Q220 20 340 150 T560 120 L560 360 L80 360 Z" fill="url(#rg2)" opacity="0.9" />
+            </g>
+          </svg>
+        </figure>
+        <div class="art-note">
+          <h4>Artist note</h4>
+          <p><strong>Echoes in Glass</strong> uses texture and subtle distortion to suggest looking through memory — refractions of the past into the present.</p>
+        </div>
+      </article>
+
+      <!-- Artwork 3 -->
+      <article class="frame">
+        <figure class="artwork" aria-labelledby="a3Title">
+          <figcaption id="a3Title"><h3>Nocturne: Soft Frequency</h3></figcaption>
+          <!-- This is a "video-like" CSS animated artwork (no external video files) -->
+          <div class="nocturne" role="img" aria-label="Nocturne soft frequency">
+            <div class="bar b1"></div>
+            <div class="bar b2"></div>
+            <div class="bar b3"></div>
+            <div class="bar b4"></div>
+            <div class="bar b5"></div>
+          </div>
+        </figure>
+        <div class="art-note">
+          <h4>Artist note</h4>
+          <p><strong>Nocturne: Soft Frequency</strong> is an animated study of rhythm and quiet pulse. The bars breathe and shift opacity like a slow synthesizer.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 — Chromatic Echoes. Use arrow keys to navigate between rooms.</small>
+  </footer>
+</body>
+</html>
