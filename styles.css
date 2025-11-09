@@ -1,0 +1,159 @@
+/* styles.css
+   External stylesheet for Chromatic Echoes exhibit
+   Responsive, accessible, semantic layout + animated SVG/CSS art
+*/
+
+/* Basic resets */
+:root{
+  --bg:#070914;
+  --panel:#0f1724;
+  --muted:#9aa4b2;
+  --accent:#ffd180;
+  --glass: rgba(255,255,255,0.04);
+  --max-width:1100px;
+  --nav-height:72px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,var(--bg),#0b1120);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* HEADER */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:16px;
+  max-width:var(--max-width);
+  margin:16px auto;
+}
+.site-brand h1{margin:0;font-size:1.2rem;letter-spacing:0.08em}
+.tagline{margin:0;color:var(--muted);font-size:0.9rem}
+
+/* NAV */
+.nav-list{
+  list-style:none;
+  margin:0;padding:0;
+  display:flex;gap:12px;
+  align-items:center;
+}
+.nav-list a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 12px;border-radius:8px;
+  transition:all .18s ease;
+  font-weight:600;font-size:0.95rem;
+}
+.nav-list a:hover,
+.nav-list a:focus{color:#fff;transform:translateY(-2px)}
+.nav-list a.active{
+  background:linear-gradient(90deg, rgba(255,209,128,0.06), rgba(178,136,255,0.04));
+  color:var(--accent);
+  box-shadow:0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* Main layout */
+main{max-width:var(--max-width);margin:0 auto;padding:18px}
+
+.hero{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:14px;
+  padding:24px;
+  margin-bottom:18px;
+  display:flex;
+  justify-content:center;
+}
+.hero-frame{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.featured{width:min(54ch,46%);min-width:260px}
+.hero .entry-copy{max-width:40ch;color:var(--muted)}
+.btn{
+  display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;
+  background:linear-gradient(90deg,#ffb86b,#b388ff);color:#061018;text-decoration:none;font-weight:700;
+  box-shadow:0 8px 26px rgba(179,106,255,0.08);
+}
+
+/* Gallery grid */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  margin-top:14px;
+}
+.frame{
+  background:var(--panel);
+  border-radius:12px;
+  padding:12px;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  box-shadow:0 8px 24px rgba(2,6,23,0.6);
+}
+
+/* Artwork presentation */
+.artwork{flex:0 0 48%; min-width:160px;}
+.art-svg{width:100%;height:auto;border-radius:10px;display:block;overflow:hidden}
+.art-note{flex:1;color:var(--muted);font-size:0.95rem}
+.artwork.featured .art-svg{height:320px}
+.artwork.small .art-svg.small{height:160px}
+
+/* Nocturne bars */
+.nocturne{
+  width:100%;height:220px;border-radius:12px;display:flex;align-items:end;gap:10px;padding:12px;background:linear-gradient(180deg,#020617,#08122a);
+}
+.nocturne .bar{flex:1;border-radius:6px;opacity:0.9}
+.nocturne .b1{background:linear-gradient(180deg,#ff9a9e,#fecfef);animation:rise 5s ease-in-out infinite}
+.nocturne .b2{background:linear-gradient(180deg,#a1c4fd,#c2e9fb);animation:rise 4s ease-in-out .5s infinite}
+.nocturne .b3{background:linear-gradient(180deg,#b8f2e6,#d3f8ff);animation:rise 6s ease-in-out .9s infinite}
+.nocturne .b4{background:linear-gradient(180deg,#ffd6a5,#ffd6f3);animation:rise 4.6s ease-in-out 1.2s infinite}
+.nocturne .b5{background:linear-gradient(180deg,#a9def9,#e0c3fc);animation:rise 5.7s ease-in-out .2s infinite}
+@keyframes rise{
+  0%{height:24%}
+  25%{height:60%}
+  50%{height:30%}
+  75%{height:72%}
+  100%{height:24%}
+}
+
+/* SVG shape animations via CSS classes */
+.g1{fill:#2f4bff;opacity:0.45; transform-origin:400px 250px; animation:float1 8s ease-in-out infinite;}
+.g2{fill:#ff7ab6;opacity:0.35; transform-origin:320px 200px; animation:float2 9s ease-in-out infinite;}
+.g3{fill:#ffd180;opacity:0.3; transform-origin:480px 300px; animation:float3 7s ease-in-out infinite;}
+
+@keyframes float1{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
+@keyframes float2{0%{transform:translateY(0) scale(1)}50%{transform:translateY(14px) scale(1.01)}100%{transform:translateY(0) scale(1)}}
+@keyframes float3{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-8px) scale(1.01)}100%{transform:translateY(0) scale(1)}}
+
+/* Other SVG animations */
+.moving-shapes .s1{fill:#ffffff22; animation:spin 22s linear infinite; transform-origin:120px 100px}
+.moving-shapes .s2{fill:#ffffff22; animation:spin 28s linear reverse infinite; transform-origin:460px 300px}
+.moving-shapes .s3{fill:#ffffff15; animation:float3 12s ease-in-out infinite}
+
+@keyframes spin{from{transform:rotate(0)} to{transform:rotate(360deg)}}
+
+/* Caption and text styling */
+figcaption h3{margin:0 0 6px 0;font-size:1.05rem}
+.art-note h4{margin:0 0 6px 0;color:#fff;font-size:0.95rem}
+
+/* Footer */
+.site-footer{max-width:var(--max-width);margin:20px auto;padding:8px 16px;color:var(--muted);text-align:center}
+
+/* Responsive adjustments */
+@media (max-width:720px){
+  .hero-frame{flex-direction:column;align-items:center}
+  .featured{width:100%}
+  .artwork{flex-basis:100%}
+  .frame{flex-direction:column}
+}
+
+/* Small accessible focus outline */
+a:focus{outline:3px solid #ffd6a5;outline-offset:3px}
