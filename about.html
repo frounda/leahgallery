@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Chromatic Echoes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="room room-about">
+  <header class="site-header">
+    <div class="site-brand">
+      <h1>Chromatic Echoes</h1>
+      <p class="tagline">About the Artist & Statement</p>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="artist-statement">
+      <h2>Artist Statement</h2>
+      <p>I explore how color memory behaves — how hues stack, fade, and recall emotional states. Working purely in HTML/CSS/SVG for this exhibit is a constraint that echoes the idea of minimal memory: with few tools, complex impressions still form.</p>
+
+      <h3>Concept / Story</h3>
+      <p>Chromatic Echoes is about the palimpsest: layers of color as layers of recollection. The three rooms offer a slow entrance (Pulse No.1), a main gallery of focused studies, and a reflection space where the artist explains process and intent.</p>
+    </section>
+
+    <section class="artist-piece">
+      <h3>Contributed Work — "Afterlight"</h3>
+      <figure class="artwork small" aria-labelledby="afterTitle">
+        <figcaption id="afterTitle"><strong>Afterlight</strong> — contribution / signature piece</figcaption>
+        <svg viewBox="0 0 600 300" class="art-svg small" role="img" aria-label="Afterlight">
+          <defs>
+            <linearGradient id="afterG" x1="0" x2="1">
+              <stop offset="0" stop-color="#fff1b6"/>
+              <stop offset="1" stop-color="#ffd6ff"/>
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="#081026" />
+          <g class="afterlight">
+            <rect x="40" y="40" width="520" height="220" rx="16" fill="url(#afterG)" opacity="0.95"/>
+            <circle cx="120" cy="120" r="44" class="af1"/>
+            <circle cx="480" cy="180" r="34" class="af2"/>
+          </g>
+        </svg>
+      </figure>
+
+      <p class="artist-note">Reflection: I made this piece to close the exhibit — a small warm field that suggests dusk and the way memory warms as we move away from an event.</p>
+    </section>
+
+    <section class="credits">
+      <h4>Technical notes</h4>
+      <ul>
+        <li>All visuals are vector SVG or CSS animations embedded in HTML—keeps the exhibition lightweight and responsive.</li>
+        <li>Accessibility: alt/aria labels, keyboard-friendly navigation, and readable text sizes.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 Chromatic Echoes — Artist: You.</small>
+  </footer>
+</body>
+</html>
